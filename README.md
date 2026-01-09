@@ -16,6 +16,6 @@ The contributors give no warranty for the using of the software.
 This program is open to use anywhere and is licensed under the GNU General Public License v3.0.
 
 # Project structure
-The project is a console application located in the ***comparisingpiplinetopsis.py*** file.
+The project is a console application located in the ***PiplineTOPSIS*** folder.
 
 All files related to testing and experiments of the frameworks under consideration are located in the ***testing*** folder. 
