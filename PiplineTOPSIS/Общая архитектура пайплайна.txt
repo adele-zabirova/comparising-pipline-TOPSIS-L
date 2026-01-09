@@ -1,0 +1,54 @@
+АЛГОРИТМ: Сравнительный конвейер TOPSIS-дефаззификации
+ВХОД: JSON-файл с лингвистическими оценками экспертов
+ВЫХОД: Сравнительные метрики и ранжирования для 4 методов
+
+ФУНКЦИЯ main():
+    // ШАГ 1: ЗАГРУЗКА И ПРЕПРОЦЕССИНГ
+    data ← ЗАГРУЗИТЬ_JSON("input_data.json")
+    alternatives ← data.alternatives           // n альтернатив
+    criteria ← data.criteria                   // m критериев (тип: positive/negative)
+    dms ← data.dms                            // r экспертов
+    B ← data.parameters.B                     // количество классов
+    
+    // ШАГ 2: ФАЗЗИФИКАЦИЯ И АГРЕГАЦИЯ (общий этап)
+    ivifs_matrix, type1_matrix ← ПОДГОТОВИТЬ_ВЗВЕШЕННЫЕ_МАТРИЦЫ(data)
+    
+    // ШАГ 3: ПАРАЛЛЕЛЬНОЕ ВЫПОЛНЕНИЕ 4 МЕТОДОВ
+    результаты ← СЛОВАРЬ()
+    
+    ДЛЯ каждого метода в [LIKELIHOOD, SCORE_CHEN, SCORE_ZHANG, TYPE1_CENTROID]:
+        начало_времени ← ТЕКУЩЕЕ_ВРЕМЯ()
+        
+        ЕСЛИ метод == LIKELIHOOD:
+            decision_matrix ← ВЫПОЛНИТЬ_IVIFS_LIKELIHOOD(ivifs_matrix)
+        ИНАЧЕ_ЕСЛИ метод == SCORE_CHEN:
+            decision_matrix ← ВЫПОЛНИТЬ_SCORE_CHEN(ivifs_matrix)
+        ИНАЧЕ_ЕСЛИ метод == SCORE_ZHANG:
+            decision_matrix ← ВЫПОЛНИТЬ_SCORE_ZHANG(ivifs_matrix)
+        ИНАЧЕ:
+            decision_matrix ← ВЫПОЛНИТЬ_TYPE1_CENTROID(type1_matrix)
+        
+        // ШАГ 4: КЛАССИЧЕСКИЙ TOPSIS (общий для всех)
+        ranking_result ← КЛАССИЧЕСКИЙ_TOPSIS(decision_matrix, criteria)
+        
+        // ШАГ 5: АНАЛИЗ ЧУВСТВИТЕЛЬНОСТИ
+        stability ← АНАЛИЗ_ЧУВСТВИТЕЛЬНОСТИ(метод, данные, noise_level=0.10)
+        
+        время_выполнения ← ТЕКУЩЕЕ_ВРЕМЯ() - начало_времени
+        
+        результаты[метод] ← {
+            "ranking": ranking_result,
+            "stability": stability,
+            "execution_time": время_выполнения,
+            "decision_matrix": decision_matrix
+        }
+    
+    // ШАГ 6: СРАВНИТЕЛЬНЫЙ АНАЛИЗ
+    metrics ← ВЫЧИСЛИТЬ_МЕТРИКИ_СРАВНЕНИЯ(результаты)
+    
+    // ШАШ 7: ВИЗУАЛИЗАЦИЯ И СОХРАНЕНИЕ
+    ВИЗУАЛИЗИРОВАТЬ_РЕЗУЛЬТАТЫ(результаты, metrics)
+    СОХРАНИТЬ_В_JSON(результаты, metrics)
+    
+    ВЕРНУТЬ результаты, metrics
+КОНЕЦ_ФУНКЦИИ
