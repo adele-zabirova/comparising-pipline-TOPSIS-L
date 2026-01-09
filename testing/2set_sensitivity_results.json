@@ -1,0 +1,46 @@
+{
+  "IVIFS-Likelihood": {
+    "base_ranking": {
+      "Технология Y": 1,
+      "Технология X": 2,
+      "Технология Z": 3
+    },
+    "stability_mean": 0.9199999999999999,
+    "stability_std": 0.15999999999999998,
+    "noise_level": "medium",
+    "iterations": 10
+  },
+  "IVIFS-Score-Chen": {
+    "base_ranking": {
+      "Технология Z": 1,
+      "Технология Y": 2,
+      "Технология X": 3
+    },
+    "stability_mean": 0.96,
+    "stability_std": 0.11999999999999997,
+    "noise_level": "medium",
+    "iterations": 10
+  },
+  "IVIFS-Score-Zhang": {
+    "base_ranking": {
+      "Технология Z": 1,
+      "Технология Y": 2,
+      "Технология X": 3
+    },
+    "stability_mean": 1.0,
+    "stability_std": 0.0,
+    "noise_level": "medium",
+    "iterations": 10
+  },
+  "Type1-Centroid": {
+    "base_ranking": {
+      "Технология Z": 1,
+      "Технология X": 2,
+      "Технология Y": 3
+    },
+    "stability_mean": 0.9199999999999999,
+    "stability_std": 0.15999999999999998,
+    "noise_level": "medium",
+    "iterations": 10
+  }
+}

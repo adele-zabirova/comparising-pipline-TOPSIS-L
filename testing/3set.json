@@ -1,0 +1,55 @@
+{
+    "alternatives": ["Кандидат Alpha", "Кандидат Beta", "Кандидат Gamma", "Кандидат Delta"],
+    "criteria": [
+        {"name": "Опыт работы", "type": "positive"},
+        {"name": "Зарплатные ожидания", "type": "negative"},
+        {"name": "Гибкость графика", "type": "positive"},
+        {"name": "Требования к оборудованию", "type": "negative"},
+        {"name": "Креативность", "type": "positive"}
+    ],
+    "dms": [
+        {
+            "id": "HR-директор",
+            "weights": ["H", "VH", "ML", "MH", "L"],
+            "scores": [
+                ["VH", "VH", "L", "H", "ML"],
+                ["MH", "ML", "VH", "ML", "VH"],
+                ["L", "L", "MH", "VL", "H"],
+                ["H", "MH", "M", "M", "MH"]
+            ]
+        },
+        {
+            "id": "Технический лидер",
+            "weights": ["VH", "MH", "L", "VH", "H"],
+            "scores": [
+                ["H", "H", "ML", "VH", "L"],
+                ["VH", "M", "H", "ML", "VH"],
+                ["ML", "VL", "VH", "L", "H"],
+                ["MH", "H", "M", "MH", "MH"]
+            ]
+        },
+        {
+            "id": "Финансовый контролер",
+            "weights": ["MH", "VH", "H", "MH", "ML"],
+            "scores": [
+                ["MH", "VL", "H", "H", "MH"],
+                ["H", "ML", "MH", "ML", "H"],
+                ["L", "L", "VH", "VL", "VH"],
+                ["VH", "H", "M", "M", "ML"]
+            ]
+        },
+        {
+            "id": "Креативный директор",
+            "weights": ["ML", "MH", "MH", "L", "VH"],
+            "scores": [
+                ["L", "H", "ML", "VH", "ML"],
+                ["MH", "M", "H", "ML", "VH"],
+                ["VH", "VL", "MH", "L", "H"],
+                ["H", "MH", "M", "MH", "MH"]
+            ]
+        }
+    ],
+    "parameters": {
+        "B": 3
+    }
+}

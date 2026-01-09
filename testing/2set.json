@@ -1,0 +1,41 @@
+{
+    "alternatives": ["Технология X", "Технология Y", "Технология Z"],
+    "criteria": [
+        {"name": "Эффективность", "type": "positive"},
+        {"name": "Стоимость внедрения", "type": "negative"},
+        {"name": "Сложность интеграции", "type": "negative"},
+        {"name": "Гибкость", "type": "positive"}
+    ],
+    "dms": [
+        {
+            "id": "Эксперт 1 (Технический)",
+            "weights": ["VH", "H", "M", "MH"],
+            "scores": [
+                ["VH", "VH", "L", "ML"],
+                ["MH", "ML", "VH", "H"],
+                ["L", "L", "MH", "VH"]
+            ]
+        },
+        {
+            "id": "Эксперт 2 (Финансовый)",
+            "weights": ["MH", "VH", "H", "ML"],
+            "scores": [
+                ["H", "VL", "MH", "M"],
+                ["VH", "ML", "H", "MH"],
+                ["MH", "H", "L", "H"]
+            ]
+        },
+        {
+            "id": "Эксперт 3 (Стратегический)",
+            "weights": ["H", "MH", "ML", "VH"],
+            "scores": [
+                ["MH", "H", "ML", "VH"],
+                ["H", "M", "H", "H"],
+                ["VH", "L", "M", "MH"]
+            ]
+        }
+    ],
+    "parameters": {
+        "B": 3
+    }
+}

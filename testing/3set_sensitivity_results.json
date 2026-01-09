@@ -1,0 +1,50 @@
+{
+  "IVIFS-Likelihood": {
+    "base_ranking": {
+      "Кандидат Delta": 1,
+      "Кандидат Alpha": 2,
+      "Кандидат Beta": 3,
+      "Кандидат Gamma": 4
+    },
+    "stability_mean": 0.65,
+    "stability_std": 0.13844373104863458,
+    "noise_level": "medium",
+    "iterations": 10
+  },
+  "IVIFS-Score-Chen": {
+    "base_ranking": {
+      "Кандидат Gamma": 1,
+      "Кандидат Beta": 2,
+      "Кандидат Delta": 3,
+      "Кандидат Alpha": 4
+    },
+    "stability_mean": 0.9333333333333332,
+    "stability_std": 0.13333333333333336,
+    "noise_level": "medium",
+    "iterations": 10
+  },
+  "IVIFS-Score-Zhang": {
+    "base_ranking": {
+      "Кандидат Gamma": 1,
+      "Кандидат Beta": 2,
+      "Кандидат Delta": 3,
+      "Кандидат Alpha": 4
+    },
+    "stability_mean": 1.0,
+    "stability_std": 0.0,
+    "noise_level": "medium",
+    "iterations": 10
+  },
+  "Type1-Centroid": {
+    "base_ranking": {
+      "Кандидат Gamma": 1,
+      "Кандидат Beta": 2,
+      "Кандидат Delta": 3,
+      "Кандидат Alpha": 4
+    },
+    "stability_mean": 1.0,
+    "stability_std": 0.0,
+    "noise_level": "medium",
+    "iterations": 10
+  }
+}
