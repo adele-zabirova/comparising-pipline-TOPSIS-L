@@ -1,0 +1,43 @@
+{
+    "alternatives": ["Проект A", "Проект B", "Проект C", "Проект D"],
+    "criteria": [
+        {"name": "Рентабельность", "type": "positive"},
+        {"name": "Риск", "type": "negative"},
+        {"name": "Срок окупаемости", "type": "negative"}
+    ],
+    "dms": [
+        {
+            "id": "Эксперт 1",
+            "weights": ["VI", "I", "FI"],
+            "scores": [
+                ["VH", "VL", "L"],
+                ["H", "L", "ML"],
+                ["MH", "MH", "M"],
+                ["L", "H", "VH"]
+            ]
+        },
+        {
+            "id": "Эксперт 2",
+            "weights": ["VI", "FI", "I"],
+            "scores": [
+                ["VH", "VL", "L"],
+                ["H", "L", "ML"],
+                ["MH", "MH", "M"],
+                ["L", "H", "VH"]
+            ]
+        },
+        {
+            "id": "Эксперт 3",
+            "weights": ["I", "VI", "FI"],
+            "scores": [
+                ["VH", "L", "L"],
+                ["H", "L", "ML"],
+                ["MH", "MH", "M"],
+                ["L", "H", "VH"]
+            ]
+        }
+    ],
+    "parameters": {
+        "B": 3
+    }
+}

@@ -1,0 +1,50 @@
+{
+  "IVIFS-Likelihood": {
+    "base_ranking": {
+      "Проект C": 1,
+      "Проект D": 2,
+      "Проект B": 3,
+      "Проект A": 4
+    },
+    "stability_mean": 0.9,
+    "stability_std": 0.1527525231651947,
+    "noise_level": "medium",
+    "iterations": 10
+  },
+  "IVIFS-Score-Chen": {
+    "base_ranking": {
+      "Проект A": 1,
+      "Проект B": 2,
+      "Проект C": 3,
+      "Проект D": 4
+    },
+    "stability_mean": 1.0,
+    "stability_std": 0.0,
+    "noise_level": "medium",
+    "iterations": 10
+  },
+  "IVIFS-Score-Zhang": {
+    "base_ranking": {
+      "Проект A": 1,
+      "Проект B": 2,
+      "Проект C": 3,
+      "Проект D": 4
+    },
+    "stability_mean": 1.0,
+    "stability_std": 0.0,
+    "noise_level": "medium",
+    "iterations": 10
+  },
+  "Type1-Centroid": {
+    "base_ranking": {
+      "Проект A": 1,
+      "Проект B": 2,
+      "Проект C": 3,
+      "Проект D": 4
+    },
+    "stability_mean": 1.0,
+    "stability_std": 0.0,
+    "noise_level": "medium",
+    "iterations": 10
+  }
+}
